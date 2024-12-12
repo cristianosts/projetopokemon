@@ -59,19 +59,27 @@ let pokemonList = [
     
 ]
 
-pokemonList.map((pokemon) => {
+pokemonList.map((pokemon, position) => {
     let cardPokemon = document.getElementById('cards')
     cardPokemon.innerHTML += `
     <div class="col-5 col-md-4 col-lg-3">
-                <div class="card" >
+                <div class="card m-2" >
                     <img src="${pokemon.img}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${pokemon.nome}</h5>
                      
-                      <a href="#" class="btn btn-secondary"><i class="bi bi-eye-fill"></i></a>
+                      <a href="#" class="btn btn-secondary" onclick= "zoomImg(${position})"><i class="bi bi-eye-fill"></i></a>
                     </div>
                  </div>
             </div> 
     `
-    console.log(pokemon.nome)
 })
+
+function zoomImg(position) {
+    let pokemonView = pokemonList[position]
+    document.getElementById('pokemon-name').innerHTML = pokemonView.nome
+    document.getElementById('pokemon-describe').innerHTML = pokemonView.descricao
+    document.getElementById('img-modal').src = pokemonView.img
+
+    new bootstrap.Modal("#zoom-img").show()
+}
