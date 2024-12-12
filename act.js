@@ -83,3 +83,14 @@ function zoomImg(position) {
 
     new bootstrap.Modal("#zoom-img").show()
 }
+
+function changeSiteTheme(){
+    let theme = document.querySelector('html').getAttribute('data-bs-theme')
+    if (theme === 'light') {
+        document.querySelector('html').setAttribute('data-bs-theme','dark')
+        document.querySelector('#change').innerHTML = '<i class="bi bi-moon-fill"></i>'
+    } else {
+        document.querySelector('html').setAttribute('data-bs-theme','light')
+        document.querySelector('#change').innerHTML = '<i class="bi bi-brightness-high-fill"></i>'
+    }
+}
