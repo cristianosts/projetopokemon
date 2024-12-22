@@ -62,13 +62,13 @@ let pokemonList = [
 pokemonList.map((pokemon, position) => {
     let cardPokemon = document.getElementById('cards')
     cardPokemon.innerHTML += `
-    <div class="col-5 col-md-4 col-lg-3">
-                <div class="card m-2" >
+    <div class="col-md-4 col-lg-3">
+                <div class="card m-5" >
                     <img src="${pokemon.img}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${pokemon.nome}</h5>
                      
-                      <a href="#" class="btn btn-secondary" onclick= "zoomImg(${position})"><i class="bi bi-eye-fill"></i></a>
+                      <a href="#" class="btn btn-secondary bg-transparent" onclick= "zoomImg(${position})"><i class="bi bi-eye-fill"></i></a>
                     </div>
                  </div>
             </div> 
